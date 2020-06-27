@@ -23,6 +23,10 @@
     display: block;
 }
 
+.header__navbar-item--has-notify:hover .header__notify {
+    display: block;
+}
+
 .header__navbar-icon-link {
     color: var(--white-color);
     text-decoration: none;
@@ -120,33 +124,117 @@
 
 /* Header notification */
 .header__notify{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 404px;
+    margin-top: 6px;
+    border: 1px solid var(--low-gray-color);
+    background-color: var(--white-color);
+    cursor: default;
+    transform-origin: 90% top;
+    animation: headerNotifyGrowth ease-in 0.3s;
+    will-change: opacity, transform;
+    display: none;
+}
 
+.header__notify::before {
+    content: "";
+    border-width: 20px 28px;
+    border-style: solid;
+    border-color: transparent transparent var(--white-color) transparent;
+    position: absolute;
+    right: 6px;
+    top: -30px;
+}
+.header__notify::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -8px;
+    right: 0;
+    width: 90px;
+    height: 10px;
+}
+
+
+
+@keyframes headerNotifyGrowth {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .header__notify-header{
+    height: 40px;
+    background-color: var(--white-color);
+}
 
+.header__notify-header h3 {
+    color: var(--medium-gray-color);
+    margin: 0 0 0 12px;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 40px;
+    user-select: none;
 }
 
 .header__notify-list{
-
+    padding-left: 0;
 }
 
 .header__notify-link{
+    display: flex;
+    padding: 4px 12px;
+    width: 100%;
+    text-decoration: none;
+}
 
+.header__notify-link:hover {
+    background-color: #f7f7f7;
+}
+
+.header__notify-link--viewed {
+    background-color: rgba(238, 75, 43, 0.1);
 }
 
 .header__notify-img{
-
+    width: 48px;
+    object-fit: contain;
 }
 
 .header__notify-info{
-
+    margin-left: 12px;
 }
 
 .header__notify-name{
-
+    display: block;
+    font-size: 1.4rem;
+    color: var(--black-color);
+    font-weight: 400;
 }
 
 .header__notify-description{
+    display: block;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: var(--medium-gray-color);
+    font-weight: 00;
+}
 
+.header__notify-footer {
+    text-align: center;
+}
+
+.header__notify-footer-btn {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 8px 0;
+    width: 100%;
+    display: block;
 }

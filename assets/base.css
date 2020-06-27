@@ -1,7 +1,10 @@
 :root {
     --white-color: #fff;
     --black-color: #000;
+    --low-gray-color: #d3d3d3;
+    --medium-gray-color: #777;
     --text-color: #333;
+    --primary-color: rgb(238, 75, 43); /*EE4D2D*/
 }
 
 * {
